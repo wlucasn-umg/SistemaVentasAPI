@@ -167,11 +167,7 @@ public class FrmClientes extends JInternalFrame {
             return;
         }
         try {
-            if (dao.tieneVentas(c.getNit())) {
-                aviso("No se puede eliminar a " + c.getNombre()
-                        + ": ya tiene ventas registradas.");
-                return;
-            }
+            // Se omitió la comprobación dao.tieneVentas() para permitir el borrado directo.
             int respuesta = JOptionPane.showConfirmDialog(this,
                     "¿Eliminar al cliente " + c.getNombre() + " (NIT " + c.getNit() + ")?",
                     "Eliminar cliente", JOptionPane.YES_NO_OPTION);
